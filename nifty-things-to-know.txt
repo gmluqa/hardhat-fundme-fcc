@@ -7,5 +7,11 @@ yarn hardhat node
 # solidity style guide https://docs.soliditylang.org/en/v0.8.14/style-guide.html
 # just consult the guide when writing contracts 
 
+# to show what needs testing, what lines are uncovered
+yarn hardhat coverage
+
+# for running /test
+yarn hardhat test 
+
 https://youtu.be/gyMwXuJrbJQ?t=39137
 
