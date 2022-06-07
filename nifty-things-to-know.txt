@@ -4,5 +4,8 @@ yarn solhint contracts/*
 # console hardhat node now runs everything in deploy folder
 yarn hardhat node 
 
+# solidity style guide https://docs.soliditylang.org/en/v0.8.14/style-guide.html
+# just consult the guide when writing contracts 
+
 https://youtu.be/gyMwXuJrbJQ?t=39137
 
