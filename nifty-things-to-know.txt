@@ -1,4 +1,8 @@
 # solidity linter
 yarn solhint contracts/*
 
-https://youtu.be/gyMwXuJrbJQ?t=37594
+# console hardhat node now runs everything in deploy folder
+yarn hardhat node 
+
+https://youtu.be/gyMwXuJrbJQ?t=39137
+
