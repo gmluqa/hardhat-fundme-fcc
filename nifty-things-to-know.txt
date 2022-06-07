@@ -1,2 +1,4 @@
 # solidity linter
 yarn solhint contracts/*
+
+https://youtu.be/gyMwXuJrbJQ?t=37594

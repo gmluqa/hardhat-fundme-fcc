@@ -11,4 +11,6 @@ module.exports = async ({ getNamedAccounts, deployents }) => {
     const { deploy, log } = deployments
     const { deployer } = await getNamedAccounts() //grabs deployer from namedAccounts in hh.cnfg.js
     const chainId = network.config.chainId
+
+    //when going for localhost or hardhat, use mock
 }
