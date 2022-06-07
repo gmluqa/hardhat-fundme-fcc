@@ -3,4 +3,4 @@ artifacts
 cache
 .env
 deployments
-coverage
+coverage*
