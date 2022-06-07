@@ -14,8 +14,8 @@ module.exports = async ({ getNamedAccounts, deployents }) => {
         console.log("Local network detected, deploying mocks")
         await deploy("MockV3Aggregator", {
             contract: "MockV3Aggregator",
-            from: deployer,
-            log: true,
+            from: deployer, //from hh.config useraccounts
+            log: true, //logs gas used, tx, etc
             args: [DECIMALS, INITIAL_ANSWER], //constructor params for mock v3 agg, see source file .sol
         })
         console.log("Mocks deployed!")
