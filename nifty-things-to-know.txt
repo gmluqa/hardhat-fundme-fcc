@@ -1,0 +1,2 @@
+# solidity linter
+yarn solhint contracts/*
