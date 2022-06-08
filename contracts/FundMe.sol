@@ -28,12 +28,15 @@ contract FundMe {
     using PriceConverter for uint256;
 
     //storage vars declared with s_var
-    mapping(address => uint256) public s_addressToAmountFunded;
-    address[] public s_funders;
+    mapping(address => uint256) private s_addressToAmountFunded;
+    // Made private from public
+    address[] private s_funders;
 
     // Could we make this constant?  /* hint: no! We should make it immutable! */
     //immutable vars declared with i_var
-    address public immutable i_owner;
+
+    //changed from public to private since it's not necesarry to know, saves gas
+    address private immutable i_owner;
     // constant caps_locked
     uint256 public constant MINIMUM_USD = 50 * 10**18;
 
@@ -100,6 +103,27 @@ contract FundMe {
         require(success);
     }
 
+    // made getters for i_* s_* vars, since it's confusing and good code
+
+    function getOwner() public view returns (address) {
+        return i_owner;
+    }
+
+    function getFunder(uint256 index) public view returns (address) {
+        return s_funders[index];
+    }
+
+    function getAddressToAmountFunded(address funder)
+        public
+        view
+        returns (uint256)
+    {
+        return s_addressToAmountFunded[funder];
+    }
+
+    function getPriceFeed() public view returns (AggregatorV3Interface) {
+        return s_priceFeed;
+    }
     // Explainer from: https://solidity-by-example.org/fallback/
     // Ether is sent to contract
     //      is msg.data empty?
