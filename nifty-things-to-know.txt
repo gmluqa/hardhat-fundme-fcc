@@ -29,4 +29,4 @@ yarn hardhat test --grep "amount funded"
 # State gets deleted, anything inside a function is state
 
 # From ethers docs https://docs.ethers.io/v5/single-page/
-# ({ value: sendValue }) writes value: sendvalue to tx cost params
+# ({ value: sendValue }) writes value: sendvalue, value to be sent to smart contract
