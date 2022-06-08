@@ -13,7 +13,7 @@ yarn hardhat coverage
 # for running /test
 yarn hardhat test 
 
-https://youtu.be/gyMwXuJrbJQ?t=41041
+https://youtu.be/gyMwXuJrbJQ?t=44241
 
 # Fixed an error when `yarn hardhat test` unknown function getAddress or something like that
 yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers
@@ -27,3 +27,6 @@ yarn hardhat test --grep "amount funded"
 # Storage vs state
 # Storage persists GLOBALLY in an array, with the contract
 # State gets deleted, anything inside a function is state
+
+# From ethers docs https://docs.ethers.io/v5/single-page/
+# ({ value: sendValue }) writes value: sendvalue to tx cost params
