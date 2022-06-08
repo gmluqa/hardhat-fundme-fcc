@@ -23,3 +23,7 @@ yarn hardhat test --grep "amount funded"
 
 # Learned about debugging, clicking the red dot on a line of code to halt exec
 # Press run and debug, hit js debug terminal
+
+# Storage vs state
+# Storage persists GLOBALLY in an array, with the contract
+# State gets deleted, anything inside a function is state
