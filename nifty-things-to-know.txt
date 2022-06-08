@@ -13,7 +13,7 @@ yarn hardhat coverage
 # for running /test
 yarn hardhat test 
 
-https://youtu.be/gyMwXuJrbJQ?t=44241
+# https://youtu.be/gyMwXuJrbJQ?t=44241
 
 # Fixed an error when `yarn hardhat test` unknown function getAddress or something like that
 yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers
@@ -30,3 +30,8 @@ yarn hardhat test --grep "amount funded"
 
 # From ethers docs https://docs.ethers.io/v5/single-page/
 # ({ value: sendValue }) writes value: sendvalue, value to be sent to smart contract
+
+git remote add origin github.com/repolink
+git remote -v (to see push and pull repo targets)
+git push origin master
+# whatever the name of local branch is in place of master
