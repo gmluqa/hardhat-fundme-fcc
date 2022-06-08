@@ -15,3 +15,5 @@ yarn hardhat test
 
 https://youtu.be/gyMwXuJrbJQ?t=39137
 
+# Fixed an error when `yarn hardhat test` unknown function getAddress or something like that
+yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers
