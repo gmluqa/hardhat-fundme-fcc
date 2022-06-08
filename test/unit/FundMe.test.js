@@ -75,5 +75,33 @@ describe("FundMe", async function () {
                 endingDeployerBalance.add(gasCost).toString()
             )
         })
+
+        it("CheaperWithdraw testing", async function () {
+            // Arrange
+            const startingFundMeBalance = await fundMe.provider.getBalance(
+                fundMe.address // get balance of contract from same creator
+            )
+            const startingDeployerBalance = await fundMe.provider.getBalance(
+                deployer // get balance of contract from deployer
+            )
+            // Act
+            const transactionResponse = await fundMe.cheaperWithdraw()
+            const transactionReceipt = await transactionResponse.wait(1)
+            const { gasUsed, effectiveGasPrice } = transactionReceipt //pulls objects out of = object
+            const gasCost = gasUsed.mul(effectiveGasPrice) // .(mul) used to multiply BIGnumbers
+
+            const endingFundMeBalance = await fundMe.provider.getBalance(
+                fundMe.address
+            )
+            const endingDeployerBalance = await fundMe.provider.getBalance(
+                deployer
+            )
+            // Assert
+            assert.equal(endingFundMeBalance, 0)
+            assert.equal(
+                startingDeployerBalance.add(startingFundMeBalance).toString(), // .add() is a solidity function
+                endingDeployerBalance.add(gasCost).toString()
+            )
+        })
     })
 })
