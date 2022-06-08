@@ -24,6 +24,9 @@
     "solhint": "^3.3.6",
     "solidity-coverage": "^0.7.16"
   },
+  "scripts" : {
+    "test" : "yarn hardhat test"
+  },
   "name": "fcc-fund-me-three",
   "version": "1.0.0",
   "author": "gmluqa <gmluqa@protonmail.com>",
