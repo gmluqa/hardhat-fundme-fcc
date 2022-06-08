@@ -22,11 +22,11 @@ module.exports = {
         },
     },
     gasReporter: {
-        enabled: false,
+        enabled: true,
         outputFile: "gas-reporter.txt",
         noColors: true,
         currency: "USD",
-        coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+        // coinmarketcap: process.env.COINMARKETCAP_API_KEY,
     },
     etherscan: {
         apiKey: process.env.ETHERSCAN_API_KEY,

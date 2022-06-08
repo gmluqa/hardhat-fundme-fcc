@@ -4,3 +4,4 @@ cache
 .env
 deployments
 coverage*
+gas-reporter.txt
