@@ -13,10 +13,13 @@ yarn hardhat coverage
 # for running /test
 yarn hardhat test 
 
-https://youtu.be/gyMwXuJrbJQ?t=39137
+https://youtu.be/gyMwXuJrbJQ?t=41041
 
 # Fixed an error when `yarn hardhat test` unknown function getAddress or something like that
 yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers
 
 #to run a single test, grep it's description
 yarn hardhat test --grep "amount funded"
+
+# Learned about debugging, clicking the red dot on a line of code to halt exec
+# Press run and debug, hit js debug terminal
