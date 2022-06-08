@@ -35,3 +35,6 @@ git remote add origin github.com/repolink
 git remote -v (to see push and pull repo targets)
 git push origin master
 # whatever the name of local branch is in place of master
+
+git pull origin master
+# sucks current version from offsite repo to local target
