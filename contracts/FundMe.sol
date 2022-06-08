@@ -84,6 +84,22 @@ contract FundMe {
         require(callSuccess, "Call failed");
     }
 
+    function cheaperWithdraw() public payable onlyOwner {
+        address[] memory funders = s_funders; //saved as memory for multiple calls within func, gas efficient
+        // mappings can't be in mem
+        for (
+            uint256 funderIndex = 0;
+            funderIndex < funders.length;
+            funderIndex++
+        ) {
+            address funder = funders[funderIndex];
+            s_addressToAmountFunded[funder] = 0;
+        }
+        s_funders = new address[](0);
+        (bool success, ) = i_owner.call{value: address(this).balance}("");
+        require(success);
+    }
+
     // Explainer from: https://solidity-by-example.org/fallback/
     // Ether is sent to contract
     //      is msg.data empty?
