@@ -18,7 +18,7 @@ module.exports = {
             url: process.env.RINKEBY_RPC_URL,
             accounts: [process.env.PRIVATE_KEY], // uses the private key
             chainId: 4,
-            blockConfirmations: 6, //Wait 6 blocks, refrenced in 01-deploy
+//            blockConfirmations: 6, //Wait 6 blocks, refrenced in 01-deploy
         },
     },
     gasReporter: {

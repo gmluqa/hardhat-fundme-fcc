@@ -13,18 +13,26 @@ developmentChains.includes(network.name)
     : describe("FundMe", async function () {
           let fundMe
           let deployer
-          const sendValue = ethers.utils.parseEther("1")
+          const sendValue = ethers.utils.parseEther("0.1")
           beforeEach(async function () {
               deployer = (await getUnnamedAccounts()).deployer
               fundMe = await ethers.getContract("FundMe", deployer)
+              console.log("in before each loop")
           })
 
+          console.log("out of before each loop")
           it("Allows people to fund and withdraw", async function () {
-              await fundMe.fund({ value: sendValue })
-              await fundMe.withdraw()
+              let tx = await fundMe.fund({ value: sendValue })
+              tx.wait(1)
+              tx = await fundMe.cheaperWithdraw({
+                  gasLimit: 100000,
+              })
+              tx.wait(1)
               const endingBalance = await fundMe.provider.getBalance(
                   fundMe.address
               )
+              console.log(endingBalance.toString() + " should equal 0")
+
               assert.equal(endingBalance.toString(), "0")
           })
       })
